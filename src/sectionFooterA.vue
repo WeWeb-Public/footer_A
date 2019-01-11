@@ -9,9 +9,9 @@
         <div class="venue-info">
             <div class="container">
                 <div class="row venue-info-container">
-                    <wwObject class="block" :ww-object="section.data.text1"></wwObject>
-                    <wwObject class="block" :ww-object="section.data.text2"></wwObject>
-                    <wwObject class="block" :ww-object="section.data.text3"></wwObject>
+                    <wwObject class="block" v-bind:ww-object="section.data.text1"></wwObject>
+                    <wwObject class="block" v-bind:ww-object="section.data.text2"></wwObject>
+                    <wwObject class="block" v-bind:ww-object="section.data.text3"></wwObject>
                 </div>
             </div>
         </div>
@@ -35,19 +35,19 @@ export default {
     },
     created() {
         this.section.data = this.section.data || {}
-
-        if (!this.section.data.background)
+        
+        if (!this.section.data.background) {
             this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color' });
-
-        if (!this.section.data.text1)
+        }
+        if (!this.section.data.text1) {
             this.section.data.text1 = wwLib.wwObject.getDefault({ type: 'ww-text' });
-
-        if (!this.section.data.text2)
+        }
+        if (!this.section.data.text2) {
             this.section.data.text2 = wwLib.wwObject.getDefault({ type: 'ww-text' });
-
-        if (!this.section.data.text3)
+        }
+        if (!this.section.data.text3) {
             this.section.data.text3 = wwLib.wwObject.getDefault({ type: 'ww-text' });
-
+        }
         this.sectionCtrl.update(this.section);
     },
     methods: {}
