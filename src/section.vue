@@ -3,9 +3,7 @@
         <!-- wwManager:start -->
         <wwSectionEditMenu v-bind:sectionCtrl="sectionCtrl"></wwSectionEditMenu>
         <!-- wwManager:end -->
-
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
-
         <div class="venue-info">
             <div class="container">
                 <div class="row venue-info-container">
@@ -15,13 +13,12 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
 export default {
-    name: "footer_A",
+    name: "__COMPONENT_NAME__",
     props: {
         sectionCtrl: Object
     },
